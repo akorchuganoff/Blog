@@ -12,8 +12,7 @@
         <h1 class="display-4 fst-italic">Мой самый новый проект. Было не просто</h1>
         <p class="lead my-3">В этот раз я решил сделать свой личный сайт. Подробнее о процессе разработки расскажу в
             этой статье</p>
-        <p>{{ data[last_article_id] }}</p>
-        <p class="lead mb-0"><a href="{{ url_for('article', article_id=data['last_article_id']) }}" class="text-white fw-bold">Продолжить читать</a></p>
+        <p class="lead mb-0"><a href="article/{{last_article_id}}" class="text-white fw-bold">Продолжить читать</a></p>
     </div>
 </div>
 {%endblock%}

@@ -1,6 +1,6 @@
 {%extends 'main/base.html'%}
 
-{%block title%}Много воды{%endblock%}
+{%block title%}{{article.Title}}{%endblock%}
 
 {%block home%}
 <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
@@ -11,5 +11,13 @@
 {%block job_offer%}{%endblock%}
 
 {%block content%}
-Статья №{{data.article_id}}
+
+<img src="{{article.TopImage.url}}">
+
+<h2>{{article.Header_on_article_page}}</h2>
+<figcaption class="blockquote-footer">
+    Published <cite title="Source Title">{{article.date_of_pub}}</cite>
+  </figcaption>
+<p>{{article.Text_of_article}}</p>
+
 {%endblock%}

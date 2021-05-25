@@ -1,10 +1,10 @@
 from django.shortcuts import render, HttpResponse
 
 def index(request):
-    data = {
-        'last_article_id': 1
+    context = {
+        'last_article_id': 3
     }
-    return render(request, 'main/index.html', data=data)
+    return render(request, 'main/index.html', context=context)
 
 def about(request):
     return render(request, 'main/about.html')
