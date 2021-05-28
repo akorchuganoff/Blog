@@ -1,23 +1,50 @@
 {%extends 'main/base.html'%}
 
-{%block title%}{{article.Title}}{%endblock%}
+{% block title %}{{article.Title}}{% endblock %}
 
-{%block home%}
+{% block home %}
 <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
-{%endblock%}
+{% endblock %}
 
-{%block about%}{%endblock%}
-{%block my_life%}{%endblock%}
-{%block job_offer%}{%endblock%}
+{% block about%}{%endblock %}
+{% block my_life%}{%endblock %}
+{% block job_offer%}{%endblock %}
 
-{%block content%}
+{% block content %}
+<div class="p-4">
+    <h2>{{article.Header_on_article_page}}</h2>
+    <figcaption class="blockquote-footer">
+        Published <cite title="Source Title">{{article.date_of_pub}}</cite>
+    </figcaption>
+</div>
 
-<img src="{{article.TopImage.url}}">
+{% with index=1 %}
 
-<h2>{{article.Header_on_article_page}}</h2>
-<figcaption class="blockquote-footer">
-    Published <cite title="Source Title">{{article.date_of_pub}}</cite>
-  </figcaption>
+{%for par in paragraphs%}
+<div class="container">
+    <div class="row">
+        {%if index == 1%}
+        <div class="col-7" style="border: 4px double black;">
+            <p style="float: right;">{{par.paragraph}}</p>
+        </div>
+        <div class="col-5">
+            <img src="{{par.image.url}}" width="100%">
+        </div>
+        {%else%}
+        <div class="col-5">
+            <img src="{{par.image.url}}" width="100%">
+        </div>
+        <div class="col-7" style="border: 4px double black;">
+            <p style="float: right;">{{par.paragraph}}</p>
+        </div>
+        {%endif%}
+    </div>
+</div>
+{{loop.index}}
+<h1>{{index}}</h1>
+{% endfor %}
+{% endwith %}
+
 <p>{{article.Text_of_article}}</p>
 
-{%endblock%}
+{% endblock %}

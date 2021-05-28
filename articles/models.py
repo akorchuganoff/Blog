@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.fields import CharField, TextField, URLField, DateTimeField
+from django.db.models.fields import CharField, TextField, URLField, DateTimeField, IntegerField
 import django
 
 
@@ -21,3 +21,14 @@ class Article(models.Model):
     class Meta:
         verbose_name = "Статья"
         verbose_name_plural = "Статьи"
+
+
+class Paragraph(models.Model):
+    image = models.ImageField(upload_to='gallery', null=True)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='paragraphs')
+    paragraph = TextField("Text of paragraph")
+    numder = IntegerField("Number of paragraph")
+
+    class Meta:
+        verbose_name = "Параграф"
+        verbose_name_plural = "Параграфы"

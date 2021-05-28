@@ -9,10 +9,31 @@
 {%block content%}
 <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
-        <h1 class="display-4 fst-italic">Мой самый новый проект. Было не просто</h1>
-        <p class="lead my-3">В этот раз я решил сделать свой личный сайт. Подробнее о процессе разработки расскажу в
-            этой статье</p>
-        <p class="lead mb-0"><a href="article/{{last_article_id}}" class="text-white fw-bold">Продолжить читать</a></p>
+        <h1 class="display-4 fst-italic">{{last_article.header_on_main_page}}</h1>
+        <p class="lead my-3">{{last_article.description_on_main_page}}</p>
+        <p class="lead mb-0"><a href="article/{{last_article.id}}" class="text-white fw-bold">Продолжить читать</a></p>
     </div>
 </div>
+
+
+    <div class="card-group">
+        {%for article in articles%}
+        <div class="col" style="display: flex;">
+            <div class="card text-center text-white bg-dark mb-3 border-warning" style="width: 18rem;">
+                <img src="{{article.TopImage.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{article.header_on_main_page}}</h5>
+                    <p class="card-text">{{article.description_on_main_page}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="article/{{article.id}}" class="btn btn-primary" style="align-self: end;">Читать</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+
+
+
 {%endblock%}
