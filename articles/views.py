@@ -6,7 +6,7 @@ from .models import Article
 def article(request, article_id):
 
     main_article = Article.objects.filter(id=article_id).first()
-    paragraphs = main_article.paragraphs.all()
+    paragraphs = main_article.paragraphs.order_by('number').all()
     context = {
         'article': main_article,
         'paragraphs': paragraphs,

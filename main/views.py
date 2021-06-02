@@ -31,9 +31,3 @@ def index(request):
 
 def about(request):
     return render(request, 'main/about.html')
-
-def life(request):
-    return render(request, 'main/life.html')
-
-def offer(request):
-    return render(request, 'main/job_offer.html')
