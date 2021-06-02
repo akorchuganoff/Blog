@@ -1,11 +1,73 @@
 {%extends 'main/base.html'%}
 
-{%block title%}Много воды{%endblock%}
+{%block title%}Корчуганов Александр{%endblock%}
 
-{%block about%}
-<li class="nav-item"><a href="about" class="nav-link active" aria-current="page">About me</a></li>
+
+{%block header%}
+<header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="about" class="nav-link active" aria-current="page">Contacts</a></li>
+        <li>
+            <div class="out"></div>
+        </li>
+        <li>
+            <div class="in"></div>
+        </li>
+    </ul>
+</header>
 {%endblock%}
 
+
 {%block content%}
-<h1>about page</h1>
+<div class="main">
+    <div class="my_row">
+        <div class="column-1">
+            <div class="first-img-left"></div>
+            <div class="first-img-right"></div>
+            {%load static%}
+            <img class="first-img" src="{%static 'img/contacts_first.jpg'%}">
+        </div>
+        <div class="column-2">
+            <p class="name">АЛЕКСАНДР<br>КОРЧУГАНОВ</p>
+            <p class="python-developer">Python developer</p>
+        </div>
+        <div class="green-block"></div>
+        <div>
+            <img class="arrow" src="{%static 'img/arrow.png'%}">
+        </div>
+    </div>
+
+    <div class="my_row-2">
+        <div class="column-2-1">
+            <div class="information-group">
+                <h2 class="h2-information">Контактная информация</h2>
+                <div class="small-line"></div>
+                <div class="field-1">
+                    <h4 class="title">GITHUB URL</h4>
+                    <p class="information-text">https://github.com/akorchuganoff</p>
+                </div>
+                <div class="field-2">
+                    <h4 class="title">E-MAIl</h4>
+                    <p class="information-text">akorchuganoff@yandex.ru</p>
+                </div>
+                <div class="field-3">
+                    <h4 class="title">LinkedIN</h4>
+                    <p class="information-text"></p>
+                </div>
+                <div class="field-4">
+                    <h4 class="title">PHONE</h4>
+                    <p class="information-text">8-902-141-98-81</p>
+                </div>
+            </div>
+        </div>
+        <div class="column-2-2">
+
+            {%load static%}
+            <img class="second-img" src="{%static 'img/contacts_second.jpg'%}">
+
+        </div>
+        <div class="green-block-2"></div>
+    </div>
+</div>
 {%endblock%}

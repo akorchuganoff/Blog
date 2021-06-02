@@ -1,3 +1,5 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,24 +7,21 @@
     <title>{%block title%}{%endblock%}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=JetBrains+Mono:ital,wght@1,500;1,700&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+{%block header%}
 <header class="d-flex justify-content-center py-3">
     <ul class="nav nav-pills">
         {%block home%}
-        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-        {%endblock%}
-        {%block about%}
-        <li class="nav-item"><a href="about" class="nav-link">About me</a></li>
-        {%endblock%}
-        {%block my_life%}
-        <li class="nav-item"><a href="mylife" class="nav-link">My life</a></li>
-        {%endblock%}
-        {%block job_offer%}
-        <li class="nav-item"><a href="joboffer" class="nav-link">Job offer</a></li>
+        <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Projects</a></li>
+        <li class="nav-item"><a href="about" class="nav-link">Contacts</a></li>
         {%endblock%}
     </ul>
 </header>
+{%endblock%}
 <div class="container">
     {%block content%}{%endblock%}
 </div>
