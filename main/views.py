@@ -30,4 +30,4 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'main/about.html')
+    return render(request, 'main/about_new.html')
