@@ -1,5 +1,4 @@
 body{
-
 }
 
 .proj-button{
@@ -9,7 +8,7 @@ body{
   background: #F7FBFF;
   position: absolute;
   right: 5%;
-  top: 5%;
+  top: 2%;
   text-align: center;
   line-height: 50px;
 }
@@ -24,20 +23,44 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  margin-top: 50px;
 }
-
 .col_1{
   background-color: #F7FBFF;
-  width: 30%;
+  width: 35%;
   margin-top: 50px;
   margin-left: 0px;
   margin-bottom: 50px;
+}
+.col_2{
+  width: 30%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.col_3{
+  width: 30%;
+  margin-right: 3%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.group{
+  color: #F7FBFF;
+  margin-left: 5%;
+  width: 80%;
+}
+.group > h3{
+  font-size: 17pt;
+  font-family: font-family: 'Roboto Slab', serif;
+}
+.group > p{
+  font-size: 13pt;
+  font-family: 'Jura', sans-serif;
 }
 
 .markup{
   margin-left: 50px;
   margin-right: 50px;
-
 }
 .round-image{
   width: 50%;
@@ -60,37 +83,62 @@ body{
   height: 5px;
   background-color: #FF9A90;
 }
-
-
-.col_2{
-  width: 30%;
- margin-bottom: 50px;
-  margin-top: 50px;
-}
-.col_3{
-  width: 30%;
-  margin-right: 3%;
-  margin-top: 50px;
-   margin-bottom: 50px;
-}
-
 .grey-line{
   width: 10%;
   height: 5px;
   background-color: #C6C6C6;
-  margin: 
+  margin:
 }
 
-.group{
-  color: #F7FBFF;
-  margin-left: 50px;
-  width: 80%;
+@media screen and (max-width: 1020px){
+  .row{
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .col_1{
+    background-color: #F7FBFF;
+    width: 90%;
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 0px;
+  }
+  .col_2{
+    width: 90%;
+    margin-top: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 0px;
+  }
+  .col_3{
+    width: 90%;
+    margin-top: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 50px;
+  }
+
+  .group{
+    color: #F7FBFF;
+    width: 90%;
+    margin-left: 5%;
+  }
+  .group > h3{
+    font-size: 14pt;
+    font-family: font-family: 'Roboto Slab', serif;
+  }
+  .group > p{
+    font-size: 10pt;
+    font-family: 'Jura', sans-serif;
+  }
+
+  .proj-button{
+    left: calc(50% - 50px);
+  }
+
+  .markup{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
-.group > h3{
-  font-size: 17pt;
-  font-family: font-family: 'Roboto Slab', serif;
-}
-.group > p{
-  font-size: 13pt;
-  font-family: 'Jura', sans-serif;
-}
+@media screen and (max-width: 1020px)
